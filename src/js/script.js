@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 'Ocp-Apim-Subscription-Key': 'd7d183a0e2c74f0682149639e89e9bae',
                 'Ocp-Apim-Subscription-Region': 'brazilsouth',
                 'Content-type': 'application/json',
-                'X-ClientTraceId': uuidv4()
+                'X-ClientTraceId': uuid.v4()
             };        
             const body = [{ 'Text': texto }];
 
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     obterConselhoBtn.addEventListener('click', async function () {
         obterConselhoBtn.disabled = true;
-        obterConselhoBtn.innerHTML = '<img src="https://loading.io/asset/712330" alt="Loading...">';
+        exibirConselho.innerHTML = '<img src="./src/img/loading.gif" alt="Loading..." width="50" height="50">';
 
         const conselhoResponse = await fetch('https://api.adviceslip.com/advice');
         const conselhoData = await conselhoResponse.json();
@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
         numeroConselhoSpan.textContent = conselhoData.slip.id;
         exibirConselho.textContent = `"${conselhoTraduzido}"`;
 
-        obterConselhoBtn.innerHTML = 'Obter Conselho';
         obterConselhoBtn.disabled = false;
     });
 });
