@@ -40,6 +40,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     obterConselhoBtn.addEventListener('click', async function () {
+        obterConselhoBtn.disabled = true;
+        obterConselhoBtn.innerHTML = '<img src="https://loading.io/asset/712330" alt="Loading...">';
+
         const conselhoResponse = await fetch('https://api.adviceslip.com/advice');
         const conselhoData = await conselhoResponse.json();
         const conselho = conselhoData.slip.advice;
@@ -48,5 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         numeroConselhoSpan.textContent = conselhoData.slip.id;
         exibirConselho.textContent = `"${conselhoTraduzido}"`;
+
+        obterConselhoBtn.innerHTML = 'Obter Conselho';
+        obterConselhoBtn.disabled = false;
     });
 });
