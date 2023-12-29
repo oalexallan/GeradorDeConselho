@@ -1,4 +1,4 @@
-# Gerador de Conselho test
+# Gerador de Conselho
 Um gerador de conselho simples em português, escrito em HTML, CSS e JavaScript.
 
 ## Ferramentas Utilizadas
