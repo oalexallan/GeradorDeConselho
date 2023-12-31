@@ -1,0 +1,15 @@
+name: fluxo de trabalho
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Definir variáveis de ambiente
+      run: |
+        echo "URL=${{ secrets.URL }}" >> $GITHUB_ENV
+        echo "SUBSCRIPTION_KEY=${{ secrets.SUBSCRIPTION_KEY }}" >> $GITHUB_ENV
+        echo "SUBSCRIPTION_REGION=${{ secrets.SUBSCRIPTION_REGION }}" >> $GITHUB_ENV
+    - name: Executar script
+      run: node src/js/script.js
