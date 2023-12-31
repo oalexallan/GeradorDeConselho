@@ -1,3 +1,9 @@
+
+const jsdom = require('jsdom');
+const { JSDOM } = jsdom;
+const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>');
+const document = dom.window.document;
+
 document.addEventListener('DOMContentLoaded', function () {
     const obterConselhoBtn = document.getElementById('obterConselho');
     const numeroConselhoSpan = document.getElementById('numeroConselho');
