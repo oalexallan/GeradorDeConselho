@@ -12,4 +12,4 @@ jobs:
         echo "SUBSCRIPTION_KEY=${{ secrets.SUBSCRIPTION_KEY }}" >> $GITHUB_ENV
         echo "SUBSCRIPTION_REGION=${{ secrets.SUBSCRIPTION_REGION }}" >> $GITHUB_ENV
     - name: Executar script
-      run: node script.js
+      run: node src/js/script.js
