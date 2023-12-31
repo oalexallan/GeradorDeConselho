@@ -1,8 +1,7 @@
-
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>');
-const document = dom.window.document;
+const { document } = dom.window;
 
 document.addEventListener('DOMContentLoaded', function () {
     const obterConselhoBtn = document.getElementById('obterConselho');
