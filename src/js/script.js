@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (language === 'en') {
             return texto;
         } else {
-            const url = `https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=${language}`;
+            const url = `${process.env.URL}${language}`;
             const headers = {
-                'Ocp-Apim-Subscription-Key': 'd7d183a0e2c74f0682149639e89e9bae',
-                'Ocp-Apim-Subscription-Region': 'brazilsouth',
+                'Ocp-Apim-Subscription-Key': process.env.SUBSCRIPTION_KEY,
+                'Ocp-Apim-Subscription-Region': process.env.SUBSCRIPTION_REGION,
                 'Content-type': 'application/json',
                 'X-ClientTraceId': uuid.v4()
             };        
