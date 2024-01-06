@@ -176,6 +176,7 @@ body {
 
 
 .container {
+  margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -225,5 +226,18 @@ body {
 @media (max-width:500px) {
   .container {
     width: 320px;
+  }
+  container .text{
+    font-size: 20px;
+  }
+}
+@media (max-height:670px) {
+  body {
+    justify-content: end;
+    padding-bottom: 90px;
+  }
+  .container .text{
+    padding: 0 10px 30px 10px;
+    font-size: 20px;
   }
 }
