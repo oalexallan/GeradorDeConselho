@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const obterConselhoBtn = document.getElementById('obterConselho');
     const numeroConselhoSpan = document.getElementById('numeroConselho');
     const exibirConselho = document.getElementById('exibirConselho');
-    const radios = document.querySelectorAll('input[name="ChackLanguage"]');
+    const selectLanguage = document.getElementById('Language');
     let language = 'pt';
     let conselhos;
     let numerosUtilizados = new Set();
@@ -14,10 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Erro ao carregar conselhos:', error));
 
-    radios.forEach(radio => {
-        radio.addEventListener('change', function() {
-            language = this.value === 'Portugues' ? 'pt' : 'en';
-        });
+    selectLanguage.addEventListener('change', function() { 
+        language = this.value === 'PT' ? 'pt' : 'en';
     });
 
     function obterNumeroConselho() {
