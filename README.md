@@ -33,5 +33,11 @@ Para usar o gerador de conselhos, basta acessar o site e clicar no botão "Gerar
 
 O código para este projeto está disponível no GitHub. Sinta-se à vontade para explorar e contribuir!
 
+### Design Mobile
+<img src= "./Design/Design-mobile.png">
+
+### Design Desktop 
+<img src="./Design/Design-desktop.png">
+
 
 ### Obrigado por usar o gerador de conselho!
